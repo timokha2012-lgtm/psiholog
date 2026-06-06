@@ -1,520 +1,184 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Дмитрий Петров — христианский психолог. Онлайн-консультации.</title>
-<meta name="description" content="Христианский психолог. Дьякон церкви. Работа с зависимостями, созависимостью, духовным кризисом, образом Бога. Только онлайн. Без морализаторства, без обесценивания веры.">
-
-<!-- Иконка во вкладке браузера -->
-<link rel="icon" type="image/jpeg" href="photo.jpg">
-
-<!-- Open Graph: превью в Telegram, WhatsApp, ВК, Facebook -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://timokha2012-lgtm.github.io/psiholog/">
-<meta property="og:title" content="Дмитрий Петров — христианский психолог">
-<meta property="og:description" content="Психолог, который сам прошёл. Не из учебника — из жизни. 16 лет работы с зависимыми и их семьями. Дьякон церкви. Онлайн-консультации.">
-<meta property="og:image" content="https://timokha2012-lgtm.github.io/psiholog/photo.jpg">
-<meta property="og:image:width" content="640">
-<meta property="og:image:height" content="640">
-<meta property="og:locale" content="ru_RU">
-<meta property="og:site_name" content="Дмитрий Петров — психолог">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Дмитрий Петров — христианский психолог">
-<meta name="twitter:description" content="Психолог, который сам прошёл. Не из учебника — из жизни.">
-<meta name="twitter:image" content="https://timokha2012-lgtm.github.io/psiholog/photo.jpg">
-
-<style>
-:root {
-  --bg: #faf8f3;
-  --ink: #1a1a1a;
-  --ink-soft: #4a4a4a;
-  --line: #e6e0d2;
-  --accent: #5b8a72;
-  --accent-dark: #3f6b56;
-  --warm: #c97b63;
-  --warm-dark: #a55c46;
-  --card: #ffffff;
-  --highlight: #f5efe0;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background: var(--bg);
-  color: var(--ink);
-  line-height: 1.55;
-  font-size: 17px;
-  -webkit-font-smoothing: antialiased;
-}
-.container { max-width: 880px; margin: 0 auto; padding: 0 22px; }
-
-header {
-  padding: 18px 0;
-  border-bottom: 1px solid var(--line);
-  position: sticky;
-  top: 0;
-  background: var(--bg);
-  z-index: 100;
-}
-.header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
-.brand { font-weight: 700; font-size: 17px; letter-spacing: -0.01em; }
-.brand-sub { display: block; font-weight: 400; font-size: 12px; color: var(--ink-soft); margin-top: 2px; text-transform: uppercase; letter-spacing: 0.06em; }
-.header-cta { display: flex; gap: 14px; align-items: center; font-size: 15px; }
-.header-cta a.btn-mini { background: var(--accent); color: #fff; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 14px; }
-.header-cta a.btn-mini:hover { background: var(--accent-dark); }
-
-/* HERO */
-.hero { padding: 70px 0 50px; }
-.hero-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 40px; align-items: start; }
-@media (max-width: 720px) { .hero-grid { grid-template-columns: 1fr; } }
-.hero-pretitle { font-size: 13px; color: var(--accent-dark); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700; margin-bottom: 18px; }
-.hero h1 { font-size: clamp(28px, 4.2vw, 42px); line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 22px; }
-.hero h1 em { font-style: normal; color: var(--accent-dark); }
-.hero-lead { font-size: 18px; color: var(--ink-soft); margin-bottom: 28px; }
-.hero-bib { font-style: italic; color: var(--ink-soft); font-size: 15px; padding-left: 14px; border-left: 3px solid var(--accent); margin-bottom: 30px; }
-.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
-.hero-photo {
-  aspect-ratio: 4/5;
-  border-radius: 14px;
-  overflow: hidden;
-  background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
-}
-.hero-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.hero-photo-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #888;
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-/* BUTTONS */
-.btn {
-  display: inline-block;
-  padding: 14px 24px;
-  border-radius: 10px;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 16px;
-  border: 2px solid transparent;
-  cursor: pointer;
-  font-family: inherit;
-  transition: transform 0.1s ease;
-}
-.btn:active { transform: translateY(1px); }
-.btn-primary { background: var(--accent); color: #fff; }
-.btn-primary:hover { background: var(--accent-dark); }
-.btn-outline { background: transparent; color: var(--ink); border-color: var(--line); }
-.btn-outline:hover { border-color: var(--ink); }
-
-/* SECTIONS */
-.section { padding: 50px 0; border-top: 1px solid var(--line); }
-.section-title { font-size: clamp(24px, 3.5vw, 30px); line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 18px; }
-.section-lead { font-size: 18px; color: var(--ink-soft); max-width: 640px; margin-bottom: 32px; }
-
-/* ABOUT */
-.about-block { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: start; }
-@media (max-width: 720px) { .about-block { grid-template-columns: 1fr; } }
-.credentials { list-style: none; margin-top: 16px; }
-.credentials li {
-  padding: 12px 0;
-  border-top: 1px solid var(--line);
-  font-size: 15px;
-  color: var(--ink-soft);
-}
-.credentials li:first-child { border-top: none; }
-.credentials strong { color: var(--ink); }
-
-/* TOPICS — С ЧЕМ РАБОТАЮ */
-.topics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
-.topic-card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 22px;
-}
-.topic-card h4 { font-size: 17px; margin-bottom: 8px; }
-.topic-card p { color: var(--ink-soft); font-size: 14px; line-height: 1.5; }
-
-/* APPROACH — КАК РАБОТАЮ */
-.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
-@media (max-width: 720px) { .two-col { grid-template-columns: 1fr; } }
-.col-card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  padding: 26px;
-}
-.col-card h3 { font-size: 18px; margin-bottom: 14px; }
-.col-card[data-tone="cross"] h3::before { content: "—  "; color: #b54a3a; }
-.col-card[data-tone="check"] h3::before { content: "+  "; color: var(--accent-dark); font-weight: 700; }
-.col-list { list-style: none; }
-.col-list li { padding: 10px 0; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: 15.5px; }
-.col-list li:first-child { border-top: none; padding-top: 0; }
-
-/* PRICING */
-.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; }
-.pricing-card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  padding: 28px;
-  text-align: center;
-}
-.pricing-card .price-name { font-size: 14px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
-.pricing-card .price-amount { font-size: 28px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.02em; }
-.pricing-card .price-period { font-size: 14px; color: var(--ink-soft); margin-bottom: 18px; }
-.pricing-card .price-details { font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
-
-/* QUOTE / TESTIMONIAL */
-.quote {
-  background: var(--card);
-  border-left: 4px solid var(--accent);
-  padding: 28px 30px;
-  border-radius: 0 12px 12px 0;
-  margin: 16px 0;
-  font-size: 17px;
-  font-style: italic;
-  color: var(--ink-soft);
-  line-height: 1.6;
-}
-.quote-author { display: block; margin-top: 12px; font-style: normal; font-size: 14px; color: var(--ink); font-weight: 600; }
-
-/* FAQ */
-details {
-  border-top: 1px solid var(--line);
-  padding: 18px 0;
-}
-details:last-of-type { border-bottom: 1px solid var(--line); }
-summary {
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 16px;
-  list-style: none;
-  position: relative;
-  padding-right: 30px;
-}
-summary::-webkit-details-marker { display: none; }
-summary::after { content: "+"; position: absolute; right: 0; top: 0; font-size: 22px; color: var(--ink-soft); font-weight: 400; }
-details[open] summary::after { content: "−"; }
-.faq-answer { padding-top: 12px; color: var(--ink-soft); font-size: 15.5px; line-height: 1.6; }
-
-/* CTA-BLOCK */
-.cta-block {
-  background: var(--highlight);
-  border-radius: 16px;
-  padding: 40px 32px;
-  margin-top: 30px;
-  text-align: center;
-}
-.cta-title { font-size: 26px; line-height: 1.25; margin-bottom: 12px; letter-spacing: -0.01em; }
-.cta-text { color: var(--ink-soft); margin-bottom: 24px; max-width: 540px; margin-left: auto; margin-right: auto; }
-.cta-buttons { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
-
-/* FOOTER */
-footer {
-  background: #0f0f0f;
-  color: #b8b8b8;
-  padding: 40px 0 30px;
-  margin-top: 60px;
-}
-footer .container { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
-@media (max-width: 640px) { footer .container { grid-template-columns: 1fr; } }
-footer h4 { color: #fff; margin-bottom: 14px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; }
-footer a { color: #d8d8d8; text-decoration: none; display: block; padding: 5px 0; }
-footer a:hover { color: #fff; }
-.footer-tagline { font-size: 14px; line-height: 1.6; max-width: 360px; margin-bottom: 16px; }
-.footer-bottom { border-top: 1px solid #2a2a2a; margin-top: 30px; padding-top: 20px; font-size: 13px; color: #888; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Христианский психолог онлайн — Дмитрий Петров | Помощь зависимым и их семьям</title>
+  <meta name="description" content="Христианский психолог и дьякон церкви. Онлайн-консультации для зависимых, созависимых и верующих в духовном кризисе. 16 лет работы с зависимостью и семьями." />
 </head>
 <body>
+  <header>
+    <p>Дмитрий Петров</p>
+    <p>ПСИХОЛОГ · ДЬЯКОН ЦЕРКВИ</p>
+    <p><a href="#contact">Записаться</a></p>
 
-<header>
-  <div class="container header-inner">
-    <div class="brand">
-      Дмитрий Петров
-      <span class="brand-sub">Психолог · магистр богословия</span>
-    </div>
-    <div class="header-cta">
-      <a href="#contact" class="btn-mini">Записаться</a>
-    </div>
-  </div>
-</header>
+    <p>ХРИСТИАНСКИЙ ПСИХОЛОГ · ОНЛАЙН</p>
+    <h1>Христианский психолог онлайн для зависимых, созависимых и верующих в духовном кризисе</h1>
+    <p>Психолог, который сам прошёл зависимость, тюрьму и восстановление. Не из учебника — из жизни.</p>
+    <p>Пятнадцать лет в зависимости. Тюрьма. «Крокодил». Возвращение. Сейчас — христианский психолог и дьякон церкви, шестнадцать лет работаю с зависимыми, их семьями и людьми, у которых вера стала не опорой, а внутренней войной.</p>
+    <p>«Я уже не называю вас рабами... но Я назвал вас друзьями». Ин. 15:15</p>
+    <p><a href="#contact">Записаться на консультацию</a> <a href="#about">Подробнее обо мне</a></p>
+  </header>
 
-<!-- HERO -->
-<section class="hero" id="hero">
-  <div class="container">
-    <div class="hero-grid">
-      <div>
-        <div class="hero-pretitle">Христианский психолог · онлайн</div>
-        <h1>Психолог, который <em>сам прошёл</em>. Не из учебника — из жизни.</h1>
-        <p class="hero-lead">Пятнадцать лет в зависимости. Тюрьма. "Крокодил". Возвращение. Сейчас — психолог и дьякон церкви, шестнадцать лет работаю с зависимыми и их семьями. Работаю с верой как с опорой, а не как с симптомом.</p>
-        <p class="hero-bib">«Я уже не называю вас рабами... но Я назвал вас друзьями». Ин. 15:15</p>
-        <div class="hero-cta">
-          <a href="#contact" class="btn btn-primary">Записаться на консультацию</a>
-          <a href="#about" class="btn btn-outline">Подробнее обо мне</a>
-        </div>
-      </div>
-      <div class="hero-photo">
-        <img src="photo.jpg" alt="Дмитрий Петров — христианский психолог" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;hero-photo-placeholder&quot;>положи файл photo.jpg рядом</div>'">
-      </div>
-    </div>
-  </div>
-</section>
+  <main>
+    <section id="about">
+      <h2>Кто я и почему вы можете мне доверять</h2>
+      <p>Я не человек, который просто «сделал курс психологии и открыл кабинет». Шестнадцать лет я работаю с самой тяжёлой человеческой болью — потому что сам начинал оттуда же.</p>
 
-<!-- О СЕБЕ -->
-<section class="section" id="about">
-  <div class="container">
-    <h2 class="section-title">Кто я и почему вы можете мне доверять</h2>
-    <p class="section-lead">Не "сделал курс психологии и открыл консультативный кабинет". Шестнадцать лет работы с самой тяжёлой человеческой болью — потому что начинал работать оттуда же.</p>
-    <div class="about-block">
-      <div>
-        <h3 style="font-size: 19px; margin-bottom: 14px;">Моя история коротко</h3>
-        <p style="color: var(--ink-soft); margin-bottom: 14px;">С молодости — наркотическая зависимость. 15 лет употребления. Четыре из них — "крокодил". К концу не мог ходить — отказали ноги. В реабилитационный центр меня привезли на носилках.</p>
-        <p style="color: var(--ink-soft); margin-bottom: 14px;">После реабилитации остался помогать. Сначала как волонтёр и наставник для новых резидентов. Принял служение дьякона в церкви. Параллельно начал учиться — психология, потом богословие. Через несколько лет основал благотворительный реабилитационный центр, который работает до сих пор.</p>
-        <p style="color: var(--ink-soft);">Сейчас веду частную психологическую практику онлайн параллельно с работой в центре. Если вы пришли сюда — значит, у вас что-то болит. Я постараюсь не сделать больнее.</p>
-      </div>
-      <div>
-        <h3 style="font-size: 19px; margin-bottom: 14px;">Образование и подходы</h3>
-        <ul class="credentials">
-          <li><strong>Психологическое образование:</strong> Институт психологии Talentsy (продолжаю обучение)</li>
-          <li><strong>Богословское образование:</strong> Московский Теологический Институт (магистратура; обучение приостановлено по состоянию здоровья)</li>
-          <li><strong>Личная терапия:</strong> пройдено 50 часов индивидуальной терапии — обязательное условие практики</li>
-          <li><strong>Служение:</strong> дьякон церкви</li>
-          <li><strong>Подходы:</strong> когнитивно-поведенческая терапия, элементы гештальт-подхода, мотивационное интервьюирование, пастырское сопровождение</li>
-          <li><strong>Опыт:</strong> 16 лет работы с зависимыми, созависимыми, семьями в кризисе</li>
-          <li><strong>Авторская методика:</strong> "Программа восстановления личности" — 8-месячный курс реабилитации, 11 шагов</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+      <h3>Моя история коротко</h3>
+      <p>С молодости — наркотическая зависимость. Пятнадцать лет употребления. Четыре из них — «крокодил». К концу я не мог ходить: отказали ноги. В реабилитационный центр меня привезли на носилках.</p>
+      <p>После реабилитации остался помогать другим. Сначала как волонтёр и наставник для новых резидентов. Потом принял служение дьякона в церкви. Параллельно начал учиться — психология, затем богословие. Через несколько лет основал благотворительный реабилитационный центр, который работает до сих пор.</p>
+      <p>Сейчас веду частную психологическую практику онлайн параллельно с работой в центре. Если вы пришли сюда — значит, у вас что-то болит. Я постараюсь не сделать больнее.</p>
 
-<!-- С ЧЕМ РАБОТАЮ -->
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">С чем работаю</h2>
-    <p class="section-lead">Я не универсальный психолог. Есть темы, в которых я провёл шестнадцать лет, и есть те, в которых я компетентен ограниченно. На первой консультации скажу прямо.</p>
+      <h3>Образование и подходы</h3>
+      <ul>
+        <li><strong>Психологическое образование:</strong> Институт психологии Talentsy (продолжаю обучение)</li>
+        <li><strong>Богословское образование:</strong> Московский Теологический Институт (магистратура; обучение приостановлено по состоянию здоровья)</li>
+        <li><strong>Личная терапия:</strong> пройдено 50 часов индивидуальной терапии — обязательное условие практики</li>
+        <li><strong>Служение:</strong> дьякон церкви</li>
+        <li><strong>Подходы:</strong> когнитивно-поведенческая терапия, элементы гештальт-подхода, мотивационное интервьюирование, пастырское сопровождение</li>
+        <li><strong>Опыт:</strong> 16 лет работы с зависимыми, созависимыми, семьями в кризисе</li>
+        <li><strong>Авторская методика:</strong> «Программа восстановления личности» — 8-месячный курс реабилитации, 11 шагов</li>
+      </ul>
+    </section>
 
-    <div class="topics-grid">
-      <div class="topic-card">
-        <h4>Алкогольная и наркотическая зависимость</h4>
-        <p>На любой стадии — от первых сомнений до глубокого срыва. Работаю и с самим зависимым, и с теми, кто рядом.</p>
-      </div>
-      <div class="topic-card">
-        <h4>Созависимость</h4>
-        <p>Если рядом с вами человек в зависимости и вы устали спасать, контролировать, прятать бутылки и врать на работе — это отдельная тема, и она требует отдельной работы.</p>
-      </div>
-      <div class="topic-card">
-        <h4>Игровая зависимость</h4>
-        <p>Букмекеры, казино, онлайн-игры. Механизмы те же, последствия часто тяжелее — потому что меньше внешних маркеров.</p>
-      </div>
-      <div class="topic-card">
-        <h4>Образ Бога и духовный кризис</h4>
-        <p>Когда внутри вы живёте перед Богом-Судьёй, Богом-Отсутствием или Богом-Холодом — и это разрушает молитву, веру, отношения. С этим можно работать.</p>
-      </div>
-      <div class="topic-card">
-        <h4>Стыд, вина, страх отвержения</h4>
-        <p>Особенно если вы выросли в религиозной среде, где стыд использовался как метод воспитания.</p>
-      </div>
-      <div class="topic-card">
-        <h4>Семейные кризисы</h4>
-        <p>Не семейная терапия (это другая компетенция), а индивидуальная работа с человеком, чья семья в кризисе.</p>
-      </div>
-      <div class="topic-card">
-        <h4>Поиск смысла, профессиональное выгорание</h4>
-        <p>Когда внешне всё нормально, а внутри — пусто или умерло.</p>
-      </div>
-      <div class="topic-card">
-        <h4>Постреабилитационное сопровождение</h4>
-        <p>Если вы прошли реабилитацию и нужна долгосрочная индивидуальная поддержка — отдельный формат работы.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <section id="services">
+      <h2>С чем я работаю как христианский психолог</h2>
+      <p>Я не универсальный психолог. Есть темы, в которых я провёл шестнадцать лет, и есть те, в которых моя компетенция ограничена. На первой консультации скажу прямо.</p>
 
-<!-- КАК Я РАБОТАЮ -->
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Как я работаю</h2>
-    <div class="two-col">
-      <div class="col-card" data-tone="cross">
-        <h3>Чего у меня не будет</h3>
-        <ul class="col-list">
-          <li>Не буду читать мораль</li>
-          <li>Не скажу "просто молись и держись"</li>
-          <li>Не буду обесценивать вашу веру или ваши сомнения в ней</li>
-          <li>Не буду давить виной</li>
-          <li>Не обещаю быстрого результата — психотерапия это процесс</li>
-        </ul>
-      </div>
-      <div class="col-card" data-tone="check">
-        <h3>Что будет</h3>
-        <ul class="col-list">
-          <li>Конфиденциальность — без оговорок</li>
-          <li>Соединение клинической психологии и евангельской традиции — не одно вместо другого</li>
-          <li>Прямой язык — без академического тумана</li>
-          <li>Реалистичные ожидания и честная диагностика</li>
-          <li>Возможность задавать сложные вопросы о Боге, вере, грехе — без страха быть осуждённым</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+      <h3>Алкогольная и наркотическая зависимость</h3>
+      <p>Работаю с зависимыми на любой стадии — от первых сомнений до глубокого срыва. Помогаю честно увидеть реальную картину и понять, что нужно именно сейчас: индивидуальная работа, реабилитация, сопровождение после центра или подключение семьи.</p>
 
-<!-- ФОРМАТ И СТОИМОСТЬ -->
-<section class="section" id="pricing">
-  <div class="container">
-    <h2 class="section-title">Формат работы и стоимость</h2>
-    <p class="section-lead">Работаю только онлайн — в Zoom или Telegram-видео. Длительность сессии — 50 минут. Регулярность — обычно раз в неделю, по договорённости возможны другие варианты.</p>
+      <h3>Созависимость в семье</h3>
+      <p>Если рядом с вами человек в зависимости и вы устали спасать, контролировать, прятать бутылки, покрывать долги и жить в режиме постоянной тревоги — это отдельная тема. Созависимость разрушает не меньше самой зависимости: человек теряет границы, внутреннюю опору и право на собственную жизнь.</p>
 
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <div class="price-name">Первая встреча</div>
-        <div class="price-amount">Бесплатно</div>
-        <div class="price-period">30 минут</div>
-        <div class="price-details">Знакомство. Я слушаю запрос, рассказываю как работаю. Без обязательств продолжать.</div>
-      </div>
-      <div class="pricing-card">
-        <div class="price-name">Индивидуальная сессия</div>
-        <div class="price-amount">5 000 ₽</div>
-        <div class="price-period">50 минут · онлайн</div>
-        <div class="price-details">Zoom или Telegram-видео. Оплата по СБП после сессии или авансом.</div>
-      </div>
-      <div class="pricing-card">
-        <div class="price-name">Пакет 5 сессий</div>
-        <div class="price-amount">22 500 ₽</div>
-        <div class="price-period">скидка 10%</div>
-        <div class="price-details">Оплата сразу. Использовать в течение 3 месяцев. Удобно для регулярной работы.</div>
-      </div>
-    </div>
+      <h3>Игровая зависимость</h3>
+      <p>Букмекеры, казино, онлайн-игры, цифровое бегство — механизмы те же, что и при химической зависимости. Последствия часто не менее тяжёлые, просто внешне всё дольше выглядит «не так страшно», и семья глубже проваливается в отрицание.</p>
 
-    <p style="margin-top: 28px; color: var(--ink-soft); font-size: 14px;">Если у вас сейчас совсем нет возможности оплачивать сессии — напишите мне честно. У меня есть бесплатный реабилитационный центр для тяжёлых случаев зависимости и помощи семьям.</p>
-  </div>
-</section>
+      <h3>Образ Бога и духовный кризис</h3>
+      <p>Когда внутри вы живёте перед Богом-Судьёй, Богом-Отсутствием или Богом-Холодом — вера перестаёт быть опорой и становится источником тревоги, вины и внутреннего наказания. С этим можно работать не только духовно, но и психологически.</p>
 
-<!-- ОТЗЫВЫ -->
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Что говорят клиенты</h2>
-    <p class="section-lead">С разрешения и без узнаваемых деталей — отзывы людей, с которыми работал.</p>
+      <h3>Стыд, вина, страх отвержения</h3>
+      <p>Особенно если вы выросли в религиозной среде, где стыд использовался как метод воспитания. Мы разбираем, где живая совесть, а где травма; где покаяние, а где привычка бесконечно добивать себя.</p>
 
-    <div class="quote">
-      «Я ходила к двум психологам до Дмитрия. С одним было слишком "светски" — она смотрела на мою веру как на странный артефакт, который скоро отвалится. Со вторым — слишком "церковно", я приходила со своим, а уходила с чувством, что мне в очередной раз нужно покаяться. У Дмитрия впервые я почувствовала, что и моя боль настоящая, и моя вера настоящая, и одно с другим можно разговаривать.»
-      <span class="quote-author">— Анна, 38 лет, Москва</span>
-    </div>
+      <h3>Семейные кризисы</h3>
+      <p>Я не занимаюсь семейной терапией пары как отдельной специальностью. Я работаю индивидуально с человеком, чья семья вошла в кризис и кому нужно не утонуть самому, а понять, что происходит и что делать дальше.</p>
 
-    <div class="quote">
-      «Думал, что психолог-богослов это будет такой добрый дядька, который будет говорить со мной притчами. А получил жёсткие точные вопросы. После трёх сессий понял, что то, что я называл "духовной сухостью", было обычной депрессией. Мы стали с этим работать. Веры от этого не стало меньше, наоборот.»
-      <span class="quote-author">— Сергей, 45 лет, Рязань</span>
-    </div>
+      <h3>Поиск смысла и профессиональное выгорание</h3>
+      <p>Когда внешне всё ещё держится, а внутри уже пусто, тихо или мертво — это не каприз и не «просто устал». Это может быть выгорание, депрессия, духовный кризис или всё сразу.</p>
 
-    <div class="quote">
-      «Я пришла к Дмитрию, когда у меня запил муж. Думала, он мне расскажет, как его заставить лечиться. А он сказал: "Сначала разберёмся, что с тобой происходит. Спасать его — это не ваша задача, это задача профессионалов, и вы здесь не профессионал, вы измученный близкий". Через три месяца работы я перестала его контролировать. Через полгода он сам решил пойти на реабилитацию. Не уверена, что это связано — но точно знаю: я больше не выгораю.»
-      <span class="quote-author">— Елена, 41 год, [Город]</span>
-    </div>
-  </div>
-</section>
+      <h3>Постреабилитационное сопровождение</h3>
+      <p>Если вы прошли реабилитацию и вам нужна не просто трезвость, а новая жизнь — это отдельный формат работы. После центра человек только начинает по-настоящему сталкиваться с собой, отношениями, ответственностью и свободой.</p>
+    </section>
 
-<!-- FAQ -->
-<section class="section">
-  <div class="container">
-    <h2 class="section-title">Часто спрашивают</h2>
+    <section id="process">
+      <h2>Как я работаю</h2>
 
-    <details>
-      <summary>Я христианин из другой деноминации (православный, католик, протестант). Это имеет значение?</summary>
-      <div class="faq-answer">Я дьякон пятидесятнической церкви. Это значит, что мой личный опыт веры — евангельский. Но это не значит, что я работаю только с пятидесятниками. У меня есть клиенты из православной, католической, баптистской традиций — потому что психология не зависит от конфессии. Я с уважением отношусь к вашей церковной дисциплине и не буду навязывать своё. Если вы ищете именно "православного психолога" с пониманием специфики (исповедь, духовник, посты) — я могу порекомендовать коллег-православных психологов.</div>
-    </details>
+      <h3>Чего у меня не будет</h3>
+      <ul>
+        <li>Не буду читать мораль</li>
+        <li>Не скажу «просто молись и держись»</li>
+        <li>Не буду обесценивать вашу веру или ваши сомнения в ней</li>
+        <li>Не буду давить виной</li>
+        <li>Не обещаю быстрого результата — психотерапия это процесс</li>
+      </ul>
 
-    <details>
-      <summary>Я не воцерковлённый христианин. Я могу прийти?</summary>
-      <div class="faq-answer">Да. Если вы крещены, но не ходите в церковь — это нормальная исходная точка. Если вы сомневающийся или агностик, ищущий — тоже. Я работаю с тем, что у вас есть, не с тем, что "должно быть".</div>
-    </details>
+      <h3>Что будет</h3>
+      <ul>
+        <li>Конфиденциальность — без оговорок</li>
+        <li>Соединение клинической психологии и евангельской традиции — не одно вместо другого</li>
+        <li>Прямой язык — без академического тумана</li>
+        <li>Реалистичные ожидания и честная диагностика</li>
+        <li>Возможность задавать сложные вопросы о Боге, вере, грехе — без страха быть осуждённым</li>
+      </ul>
+    </section>
 
-    <details>
-      <summary>Я не христианин вообще. Может быть, я не ваш клиент?</summary>
-      <div class="faq-answer">Это решаем вместе на первой бесплатной встрече. Если ваш запрос лежит в плоскости, где богословская рамка не нужна (например, чистая работа с зависимостью на КПТ-подходе) — мы можем работать. Если вы из другой религиозной традиции (ислам, иудаизм) — обсудим на первой встрече, есть ли смысл.</div>
-    </details>
+    <section id="pricing">
+      <h2>Формат работы и стоимость</h2>
+      <p>Работаю только онлайн — в Zoom или Telegram-видео. Длительность сессии — 50 минут. Регулярность — обычно раз в неделю, по договорённости возможны и другие варианты.</p>
 
-    <details>
-      <summary>Вы лечите или просто разговариваете?</summary>
-      <div class="faq-answer">Я не врач — медикаментозного лечения у меня нет. Психолог работает с тем, что происходит в психике через разговор, осознание, изменение паттернов, освоение техник саморегуляции. При необходимости направляю к психиатру или наркологу. Иногда работаем параллельно с врачом.</div>
-    </details>
+      <h3>Первая встреча</h3>
+      <p><strong>Бесплатно</strong><br />30 минут<br />Знакомство. Я слушаю запрос, рассказываю, как работаю. Без обязательств продолжать.</p>
 
-    <details>
-      <summary>Сколько сессий нужно? И когда будет результат?</summary>
-      <div class="faq-answer">Зависит от запроса. Острая ситуация (кризис, развод, недавний срыв) — иногда 3–5 сессий дают облегчение. Глубокая работа с зависимостью или травмой — это годы. Я скажу честно после первых 2–3 сессий, какой прогноз. И буду предупреждать, если вижу, что моих компетенций недостаточно — тогда направлю к коллеге.</div>
-    </details>
+      <h3>Индивидуальная сессия</h3>
+      <p><strong>5 000 ₽</strong><br />50 минут · онлайн<br />Zoom или Telegram-видео. Оплата по СБП после сессии или авансом.</p>
 
-    <details>
-      <summary>Это конфиденциально?</summary>
-      <div class="faq-answer">Да. Я связан профессиональной этикой и законом о персональных данных. Никакой информации о наших сессиях никто не получит — ни ваша семья, ни работодатель, ни священник, ни родственники. Исключения только те, что прописаны в законе для всех психологов: непосредственная угроза жизни (вам или кому-то).</div>
-    </details>
+      <h3>Пакет 5 сессий</h3>
+      <p><strong>22 500 ₽</strong><br />скидка 10%<br />Оплата сразу. Использовать в течение 3 месяцев. Удобно для регулярной работы.</p>
 
-    <details>
-      <summary>Я зависимый и боюсь, что вы сразу пошлёте меня в реабцентр.</summary>
-      <div class="faq-answer">Не пошлю. Реабцентр — это один из вариантов и не всегда первый. Многие случаи зависимости работают амбулаторно — то есть на индивидуальных сессиях без стационара. Поговорим, разберёмся, что вам реально подходит. Решение всегда за вами.</div>
-    </details>
+      <p>Если у вас сейчас совсем нет возможности оплачивать сессии — напишите мне честно. У меня есть бесплатный реабилитационный центр для тяжёлых случаев зависимости и помощи семьям.</p>
+    </section>
 
-    <details>
-      <summary>А если я хочу обсудить вопросы веры — грех, молитву, отношения с Богом?</summary>
-      <div class="faq-answer">Это нормально. Психолог не подменяет пастора или священника, и я с уважением отношусь к церковной дисциплине вашей деноминации. Но психология и духовная жизнь пересекаются, и часто бывает полезно различать: где у вас грех, требующий покаяния перед Богом, а где невроз, требующий терапии. Это разные пути. Я помогу различить.</div>
-    </details>
+    <section id="reviews">
+      <h2>Что говорят клиенты</h2>
+      <p>С разрешения и без узнаваемых деталей — отзывы людей, с которыми работал.</p>
 
-    <details>
-      <summary>Как происходит запись и первая встреча?</summary>
-      <div class="faq-answer">Напишите мне в Telegram или позвоните. Я отвечу в течение суток. Запишемся на бесплатную 30-минутную встречу. На ней — знакомство и принятие решения, работаем дальше или нет. Без давления.</div>
-    </details>
-  </div>
-</section>
+      <blockquote>
+        <p>«Я ходила к двум психологам до Дмитрия. С одним было слишком “светски” — она смотрела на мою веру как на странный артефакт, который скоро отвалится. Со вторым — слишком “церковно”, я приходила со своим, а уходила с чувством, что мне в очередной раз нужно покаяться. У Дмитрия впервые я почувствовала, что и моя боль настоящая, и моя вера настоящая, и одно с другим можно разговаривать.»</p>
+        <footer>— Анна, 38 лет, Москва</footer>
+      </blockquote>
 
-<!-- ФИНАЛЬНЫЙ CTA -->
-<section class="section" id="contact">
-  <div class="container">
-    <div class="cta-block">
-      <h2 class="cta-title">Первый шаг — бесплатный разговор</h2>
-      <p class="cta-text">Тридцать минут. Без обязательств. Расскажете, с чем пришли, я расскажу, как работаю. Дальше — решаем вместе.</p>
-      <div class="cta-buttons">
-        <a href="https://t.me/SONGOD62" class="btn btn-primary" target="_blank" rel="noopener">Написать в Telegram</a>
-        <a href="tel:+79205361111" class="btn btn-outline">Позвонить</a>
-      </div>
-    </div>
-  </div>
-</section>
+      <blockquote>
+        <p>«Думал, что психолог-богослов — это будет такой добрый дядька, который станет говорить со мной притчами. А получил жёсткие точные вопросы. После трёх сессий понял, что то, что я называл “духовной сухостью”, было обычной депрессией. Мы стали с этим работать. Веры от этого не стало меньше, наоборот.»</p>
+        <footer>— Сергей, 45 лет, Рязань</footer>
+      </blockquote>
 
-<!-- FOOTER -->
-<footer>
-  <div class="container">
-    <div>
-      <h4>Дмитрий Петров</h4>
-      <p class="footer-tagline">Христианский психолог, дьякон церкви. Онлайн-консультации. 16 лет работы с зависимыми и их семьями.</p>
-    </div>
-    <div>
-      <h4>Контакты</h4>
-      <a href="tel:+79205361111">+7 (920) 536-11-11</a>
-      <a href="mailto:bfond@yandex.ru">bfond@yandex.ru</a>
-      <a href="https://t.me/SONGOD62" target="_blank" rel="noopener">Telegram: @SONGOD62</a>
-      <a href="https://www.youtube.com/@petrov_path" target="_blank" rel="noopener">YouTube</a>
-    </div>
-  </div>
-  <div class="container">
-    <div class="footer-bottom">
-      © 2026 Дмитрий Петров. Все консультации конфиденциальны.
-    </div>
-  </div>
-</footer>
+      <blockquote>
+        <p>«Я пришла к Дмитрию, когда у меня запил муж. Думала, он расскажет, как его заставить лечиться. А он сказал: “Сначала разберёмся, что с тобой происходит. Спасать его — не ваша задача, это задача профессионалов, а вы здесь не профессионал, вы измученный близкий”. Через три месяца работы я перестала его контролировать. Через полгода он сам решил пойти на реабилитацию. Не уверена, что это связано, но точно знаю: я больше не выгораю.»</p>
+        <footer>— Елена, 41 год</footer>
+      </blockquote>
+    </section>
 
+    <section id="faq">
+      <h2>Часто спрашивают</h2>
+
+      <h3>Я христианин из другой деноминации. Это имеет значение?</h3>
+      <p>Нет. Я работаю с православными, протестантами, католиками и людьми с непростой духовной историей. Для меня важнее не ярлык конфессии, а то, что происходит с вами в реальности.</p>
+
+      <h3>Я не воцерковлённый христианин. Я могу прийти?</h3>
+      <p>Да. Не нужно быть «правильным верующим», чтобы обратиться за помощью. Иногда человек приходит как раз потому, что вера у него ранена, запутана или давно стала тяжёлой обязанностью.</p>
+
+      <h3>Я не христианин вообще. Может быть, я не ваш клиент?</h3>
+      <p>Да, обратиться можно. Ко мне приходят и неверующие люди, которым откликается мой опыт и подход. Я не навязываю религию, но и не прячу свою позицию.</p>
+
+      <h3>Вы лечите или просто разговариваете?</h3>
+      <p>Психологическая работа — это не «просто поговорить». Это диагностика, работа с внутренними механизмами, поведением, границами, мотивацией, травмой, зависимостью и искажёнными убеждениями.</p>
+
+      <h3>Сколько сессий нужно? И когда будет результат?</h3>
+      <p>Зависит от запроса. Иногда хватает нескольких встреч, чтобы понять ситуацию и выбрать маршрут. Иногда нужна длительная работа. Я не продаю воздух и не обещаю чудо на третьей сессии.</p>
+
+      <h3>Это конфиденциально?</h3>
+      <p>Да. Всё, что вы говорите на консультации, остаётся между нами.</p>
+
+      <h3>Я зависимый и боюсь, что вы сразу пошлёте меня в реабцентр</h3>
+      <p>Не всегда это нужно сразу. Сначала мы честно смотрим на реальную картину: степень зависимости, риски, мотивацию, поддержку семьи и историю срывов. Иногда без реабилитации никак, иногда есть другие варианты.</p>
+
+      <h3>А если я хочу обсудить вопросы веры — грех, молитву, отношения с Богом?</h3>
+      <p>Да, это как раз одна из причин, почему ко мне приходят. Здесь не нужно притворяться либо «только духовным», либо «только психологическим» человеком.</p>
+
+      <h3>Как происходит запись и первая встреча?</h3>
+      <p>Вы пишете мне в Telegram или звоните. Мы назначаем первую бесплатную встречу на 30 минут, знакомимся и решаем, подходим ли друг другу.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Первый шаг — бесплатный разговор</h2>
+      <p>Тридцать минут. Без обязательств. Вы расскажете, с чем пришли, я объясню, как работаю, и мы вместе поймём, какой следующий шаг будет честным и реалистичным.</p>
+      <p><a href="https://t.me/SONGOD62">Написать в Telegram</a> <a href="tel:+79205361111">Позвонить</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <h4>ДМИТРИЙ ПЕТРОВ</h4>
+    <p>Христианский психолог, дьякон церкви. Онлайн-консультации. 16 лет работы с зависимыми и их семьями.</p>
+
+    <h4>КОНТАКТЫ</h4>
+    <p>
+      <a href="tel:+79205361111">+7 (920) 536-11-11</a><br />
+      <a href="mailto:bfond@yandex.ru">bfond@yandex.ru</a><br />
+      <a href="https://t.me/SONGOD62">Telegram: @SONGOD62</a><br />
+      <a href="https://www.youtube.com/@petrov_path">YouTube</a>
+    </p>
+    <p>© 2026 Дмитрий Петров. Все консультации конфиденциальны.</p>
+  </footer>
 </body>
 </html>
